@@ -15,6 +15,7 @@ function ChilenoAArgentino() {
 
   return (
     <div>
+      <img src="/unnamed.webp" alt="banderas" width={250} />
       <p>Ingresa el monto en Peso Chileno</p>
       <input
         type="number"
