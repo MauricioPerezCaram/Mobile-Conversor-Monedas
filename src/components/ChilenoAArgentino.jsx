@@ -31,21 +31,26 @@ function ChilenoAArgentino() {
         </div>
 
         <p>Ingresa el monto en Peso Chileno</p>
-        <input
-          type="number"
-          value={montoChileno}
-          onChange={(e) => setMontoChileno(e.target.value)}
-        />
-        <button onClick={convertirAArgentino}>Convertir a Argentino</button>
+        <div className="input">
+          <input
+            type="number"
+            value={montoChileno}
+            onChange={(e) => setMontoChileno(e.target.value)}
+          />
+          <button onClick={convertirAArgentino}>Convertir a Argentino</button>
 
-        {resultadoChileno !== null && (
-          <div>
-            <p>El resultado en Peso Argentino es:</p>
-            <p>{"$ " + resultadoChileno}</p>
-          </div>
-        )}
+          {resultadoChileno !== null && (
+            <div>
+              <p>El monto ingresado en Pesos Argentinos es:</p>
+              <p className="resultado resultadoChileno">
+                {"$ " + resultadoChileno}
+              </p>
+            </div>
+          )}
+        </div>
       </div>
-      <div>
+      <h1>-----------------</h1>
+      <div className="input">
         <p>Ingresa el monto en Peso Argentino</p>
         <input
           type="number"
@@ -56,8 +61,10 @@ function ChilenoAArgentino() {
 
         {resultadoArgentino !== null && (
           <div>
-            <p>El resultado en Peso Chileno es:</p>
-            <p>{"$ " + resultadoArgentino}</p>
+            <p>El monto ingresado en Pesos Chilenos es:</p>
+            <p className="resultado resultadoArgentino">
+              {"$ " + resultadoArgentino}
+            </p>
           </div>
         )}
       </div>

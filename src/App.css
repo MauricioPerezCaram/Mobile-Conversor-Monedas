@@ -1,24 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.App {
-  background-color: aqua;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 50px 20px 100px 20px;
+body {
+  background-color: #f4f4f4;
+  font-family: "Lato", sans-serif;
 }
 
-.bandera {
+.App {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 20px;
+  max-width: 400px;
+  box-sizing: border-box;
 }
 
 .bandera img {
-  width: 75%;
-  margin: 10px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+input,
+button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
+  background-color: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1565c0;
+}
+
+.resultado {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Estilos adicionales para dispositivos móviles */
+
+.resultado {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.resultadoChileno,
+.resultadoArgentino {
+  background-color: #4caf50; /* Cambia el color de fondo según tus preferencias */
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
 }
