@@ -1,36 +1,67 @@
 import React, { useState } from "react";
 
 function ChilenoAArgentino() {
-  const valorDelChileno = 1.1;
+  const valorDelChileno = 1.35;
 
   const [montoChileno, setMontoChileno] = useState("");
-  const [resultado, setResultado] = useState(null);
+  const [resultadoChileno, setresultadoChileno] = useState(null);
 
   const convertirAArgentino = () => {
     const montoArgentino = (parseFloat(montoChileno) * valorDelChileno).toFixed(
       2
-    ); // monto que me pasa el andres 1.1
-    setResultado(montoArgentino);
+    );
+    setresultadoChileno(montoArgentino);
+  };
+
+  const [montoArgentino, setMontoArgentino] = useState("");
+  const [resultadoArgentino, setresultadoArgentino] = useState(null);
+
+  const convertirAChileno = () => {
+    const montoChileno = (parseFloat(montoArgentino) / valorDelChileno).toFixed(
+      2
+    );
+    setresultadoArgentino(montoChileno);
   };
 
   return (
-    <div>
-      <img src="/unnamed.webp" alt="banderas" width={250} />
-      <p>Ingresa el monto en Peso Chileno</p>
-      <input
-        type="number"
-        value={montoChileno}
-        onChange={(e) => setMontoChileno(e.target.value)}
-      />
-      <button onClick={convertirAArgentino}>Convertir a Argentino</button>
-
-      {resultado !== null && (
-        <div>
-          <p>El resultado en Peso Argentino es:</p>
-          <p>{"$ " + resultado}</p>
+    <section>
+      <div>
+        <div className="bandera">
+          <img src="/unnamed.webp" alt="banderas" width={250} />
         </div>
-      )}
-    </div>
+
+        <p>Ingresa el monto en Peso Chileno</p>
+        <input
+          type="number"
+          value={montoChileno}
+          onChange={(e) => setMontoChileno(e.target.value)}
+        />
+        <button onClick={convertirAArgentino}>Convertir a Argentino</button>
+
+        {resultadoChileno !== null && (
+          <div>
+            <p>El resultado en Peso Argentino es:</p>
+            <p>{"$ " + resultadoChileno}</p>
+          </div>
+        )}
+      </div>
+      <div>
+        <p>Ingresa el monto en Peso Argentino</p>
+        <input
+          type="number"
+          value={montoArgentino}
+          onChange={(e) => setMontoArgentino(e.target.value)}
+        />
+        <button onClick={convertirAChileno}>Convertir a Chileno</button>
+
+        {resultadoArgentino !== null && (
+          <div>
+            <p>El resultado en Peso Chileno es:</p>
+            <p>{"$ " + resultadoArgentino}</p>
+          </div>
+        )}
+      </div>
+    </section>
   );
 }
 

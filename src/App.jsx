@@ -1,5 +1,4 @@
 import "./App.css";
-import ArgentinoAChileno from "./components/ArgentinoAChileno";
 import ChilenoAArgentino from "./components/ChilenoAArgentino";
 
 function App() {
@@ -7,7 +6,6 @@ function App() {
     <div className="App">
       <h1>Conversor de monedas</h1>
       <ChilenoAArgentino />
-      <ArgentinoAChileno />
     </div>
   );
 }

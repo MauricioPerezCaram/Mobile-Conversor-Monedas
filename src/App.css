@@ -3,3 +3,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.App {
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px 100px 20px;
+}
+
+.bandera {
+  display: flex;
+  justify-content: center;
+}
+
+.bandera img {
+  width: 75%;
+  margin: 10px;
+}
