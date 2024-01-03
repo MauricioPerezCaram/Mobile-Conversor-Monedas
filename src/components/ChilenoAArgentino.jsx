@@ -1,26 +1,25 @@
 import React, { useState } from "react";
 
 function ChilenoAArgentino() {
-  const valorDelChileno = 1.3;
-
+  const [valorDelChileno, setValorDelChileno] = useState("");
   const [montoChileno, setMontoChileno] = useState("");
-  const [resultadoChileno, setresultadoChileno] = useState(null);
+  const [resultadoChileno, setResultadoChileno] = useState(null);
 
   const convertirAArgentino = () => {
-    const montoArgentino = (parseFloat(montoChileno) * valorDelChileno).toFixed(
-      2
-    );
-    setresultadoChileno(montoArgentino);
+    const montoArgentino = (
+      parseFloat(montoChileno) * parseFloat(valorDelChileno)
+    ).toFixed(2);
+    setResultadoChileno(montoArgentino);
   };
 
   const [montoArgentino, setMontoArgentino] = useState("");
-  const [resultadoArgentino, setresultadoArgentino] = useState(null);
+  const [resultadoArgentino, setResultadoArgentino] = useState(null);
 
   const convertirAChileno = () => {
-    const montoChileno = (parseFloat(montoArgentino) / valorDelChileno).toFixed(
-      2
-    );
-    setresultadoArgentino(montoChileno);
+    const montoChileno = (
+      parseFloat(montoArgentino) / parseFloat(valorDelChileno)
+    ).toFixed(2);
+    setResultadoArgentino(montoChileno);
   };
 
   return (
@@ -28,6 +27,15 @@ function ChilenoAArgentino() {
       <div>
         <div className="bandera">
           <img src="/unnamed.webp" alt="banderas" width={250} />
+        </div>
+
+        <div className="input">
+          <p>Ingresa el valor del Peso Chileno en relación al Peso Argentino</p>
+          <input
+            type="number"
+            value={valorDelChileno}
+            onChange={(e) => setValorDelChileno(e.target.value)}
+          />
         </div>
 
         <p>Ingresa el monto en Peso Chileno</p>
@@ -49,6 +57,7 @@ function ChilenoAArgentino() {
           )}
         </div>
       </div>
+
       <div className="input">
         <p>Ingresa el monto en Peso Argentino</p>
         <input
