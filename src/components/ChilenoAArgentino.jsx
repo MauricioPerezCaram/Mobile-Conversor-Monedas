@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function ChilenoAArgentino() {
-  const valorDelChileno = 1.35;
+  const valorDelChileno = 1.3;
 
   const [montoChileno, setMontoChileno] = useState("");
   const [resultadoChileno, setresultadoChileno] = useState(null);
@@ -49,7 +49,6 @@ function ChilenoAArgentino() {
           )}
         </div>
       </div>
-      <h1>-----------------</h1>
       <div className="input">
         <p>Ingresa el monto en Peso Argentino</p>
         <input
