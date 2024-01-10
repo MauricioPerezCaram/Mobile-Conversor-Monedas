@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function ChilenoAArgentino() {
-  const [valorDelChileno, setValorDelChileno] = useState("");
+  const [valorDelChileno, setValorDelChileno] = useState(
+    () => JSON.parse(localStorage.getItem("valorDelChileno")) || ""
+  );
   const [montoChileno, setMontoChileno] = useState("");
   const [resultadoChileno, setResultadoChileno] = useState(null);
 
@@ -22,6 +24,10 @@ function ChilenoAArgentino() {
     setResultadoArgentino(montoChileno);
   };
 
+  useEffect(() => {
+    localStorage.setItem("valorDelChileno", JSON.stringify(valorDelChileno));
+  }, [valorDelChileno]);
+
   return (
     <section>
       <div>
@@ -37,7 +43,6 @@ function ChilenoAArgentino() {
             onChange={(e) => setValorDelChileno(e.target.value)}
           />
         </div>
-
         <p>Ingresa el monto en Peso Chileno</p>
         <div className="input">
           <input
@@ -56,25 +61,24 @@ function ChilenoAArgentino() {
             </div>
           )}
         </div>
-      </div>
+        <div className="input">
+          <p>Ingresa el monto en Peso Argentino</p>
+          <input
+            type="number"
+            value={montoArgentino}
+            onChange={(e) => setMontoArgentino(e.target.value)}
+          />
+          <button onClick={convertirAChileno}>Convertir a Chileno</button>
 
-      <div className="input">
-        <p>Ingresa el monto en Peso Argentino</p>
-        <input
-          type="number"
-          value={montoArgentino}
-          onChange={(e) => setMontoArgentino(e.target.value)}
-        />
-        <button onClick={convertirAChileno}>Convertir a Chileno</button>
-
-        {resultadoArgentino !== null && (
-          <div>
-            <p>El monto ingresado en Pesos Chilenos es:</p>
-            <p className="resultado resultadoArgentino">
-              {"$ " + resultadoArgentino}
-            </p>
-          </div>
-        )}
+          {resultadoArgentino !== null && (
+            <div>
+              <p>El monto ingresado en Pesos Chilenos es:</p>
+              <p className="resultado resultadoArgentino">
+                {"$ " + resultadoArgentino}
+              </p>
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );
